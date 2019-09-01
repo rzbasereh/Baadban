@@ -1,3 +1,24 @@
+.bg-blue {
+    background-color: #101DD1;
+}
+.bg-cyan {
+    background-color: #D4F6FB;
+}
+.black {
+    color: #000000;
+}
+.white {
+    color: #ffffff;
+}
+.mt-10{
+    margin-top: 10px!important;
+}
+.pr-30{
+    padding-right: 30px!important;
+}
+.pl-30{
+    padding-left: 30px!important;
+}
 body {
     background-color: #252525;
 }
@@ -20,6 +41,7 @@ header > .transparent-back {
 }
 header nav.navbar {
     direction: rtl;
+    height: 100%;
 }
 header .navbar-brand img{
     position: absolute;
@@ -31,9 +53,64 @@ header .navbar-brand img{
 header .nav-link {
     color: #101DD1;
 }
+header button.navbar-toggler {
+    color: #101DD1;
+}
+header button.navbar-toggler:focus {
+    outline: none;
+}
 section#top {
     background-image: url("../img/jeremy-bishop-A0wvBW-Hjbs-unsplash.jpg");
+    background-position-x: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+}
+section#top div.baadban {
+    position: absolute;
+    top: 35%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0;
+    padding: 20px 50px 20px 20px;
+}
+section#top div.startup {
+    position: absolute;
+    bottom: 5%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    padding: 20px 20px 20px 0;
+}
+section#top div.baadban .background,
+section#top div.startup .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.35;
+    z-index: -1;
+}
+section#top div.baadban h1 {
+    color: #ffffff;
+    text-align: right;
+}
+section#top div.baadban h3 {
+    color: #101DD1;
+    text-align: left;
+}
+section#top div.startup a {
+    display: block;
+    outline: none;
+    border: none;
+    padding: 10px;
+    width: fit-content;
 }
