@@ -22,6 +22,16 @@
 .pl-30{
     padding-left: 30px!important;
 }
+.center-abs{
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 body {
     background-color: #252525;
 }
@@ -65,6 +75,7 @@ header button.navbar-toggler:focus {
 section#top {
     background-image: url("../img/jeremy-bishop-A0wvBW-Hjbs-unsplash.jpg");
     background-position-x: center;
+    background-position-y: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -121,13 +132,28 @@ section#about {
     background-color: #3848F6;
     height: 100vh;
 }
+@media (max-width: 991px) {
+    section#about {
+        background: linear-gradient(#3848F5, #202CF1);
+    }
+}
 section#about .content {
     position: relative;
     float: right;
     width: 50%;
     height: 100%;
-    padding: 120px 50px;
+    padding: 120px 50px 0 10%;
     z-index: 1;
+}
+@media (max-width: 991px) {
+    section#about .content {
+        padding: 120px 50px 0 5%;
+    }
+}
+@media (max-width: 868px) {
+    section#about .content {
+        width: 70%;
+    }
 }
 section#about .content:before {
     content: '';
@@ -140,19 +166,56 @@ section#about .content:before {
     z-index: -1;
 }
 section#about .content:after {
-    content: '';
+    width: 0;
+    height: 0;
+    border-left: 55vh solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 100vh solid #D4F6FB;
     position: absolute;
-    height: 100%;
-    width: 70%;
+    content: "";
     top: 0;
-    right: 70%;
-    border: 100px solid #D4F6FB;
-    border-top-color: transparent;
-    border-left-color: transparent;
+    left: calc(30% - 55vh);
     z-index: -1;
+}
+@media (max-width: 868px) {
+    section#about .content:before {
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100%;
+        background-color: #D4F6FB;
+    }
+    section#about .content:after {
+        border-left: 120vh solid transparent;
+        border-bottom: 100vh solid #D4F6FB;
+        left: calc(30% - 120vh);
+    }
 }
 section#about .content p {
     text-align: justify;
+    margin-top: 60px;
+}
+section#about  .baadban-catalog {
+    position: relative;
+    background-image: url("../img/Layer 3@2x.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: left;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+}
+@media (max-width: 991px) {
+    section#about  .baadban-catalog {
+        background-position-x: 40%;
+        background-position-y: -13vh;
+        background-size: 150%;
+    }
+}
+@media (max-width: 868px) {
+    section#about  .baadban-catalog {
+        width: 30%;
+    }
 }
 section#news {
     position: relative;
@@ -177,6 +240,9 @@ section#news .background {
     opacity: 0.2;
     z-index: -1;
 }
+section#news .container h2 {
+    padding-top: 50px;
+}
 section#news .owl-carousel {
     position: absolute;
     top: 50%;
@@ -195,6 +261,9 @@ section#news .owl-carousel .item {
     border: 5px solid #ffffff;
     position: relative;
 }
+section#news .owl-carousel .item:hover {
+    cursor: pointer;
+}
 section#news .owl-carousel .item .gradient-front {
     position: absolute;
     top: 0;
@@ -202,9 +271,11 @@ section#news .owl-carousel .item .gradient-front {
     height: 100%;
     width: 100%;
     background: linear-gradient(to right, #000000a8, transparent);
+    transition: all ease 0.3s;
 }
 section#news .owl-carousel .item img {
     height: 300px;
+    transition: all ease 0.3s;
 }
 section#news .owl-carousel .item .item-title {
     position: absolute;
@@ -212,6 +283,11 @@ section#news .owl-carousel .item .item-title {
     left: 0;
     width: 100%;
     padding: 10px 10px;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
     z-index: 0;
 }
 section#news .owl-carousel .item .item-title:before {
@@ -224,6 +300,10 @@ section#news .owl-carousel .item .item-title:before {
     background-color: #000000;
     opacity: 0.7;
     z-index: -1;
+}
+section#news .owl-carousel .item .item-title span {
+    width: fit-content;
+    height: fit-content;
 }
 section#news .owl-carousel .owl-dots.disabled,
 section#news .owl-carousel .owl-nav.disabled {
@@ -250,4 +330,68 @@ section#news .owl-carousel .owl-nav .owl-next {
 .owl-theme .owl-dots .owl-dot:hover span {
     background: #ffffff;
     outline: none;
+}
+.owl-theme .owl-dots .owl-dot span {
+    width: 15px;
+    height: 15px;
+}
+section#samples {
+    position: relative;
+    height: 100vh;
+    background-color: #2432F3;
+    padding-top: 30px;
+}
+section#samples .header-line {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    z-index: 0;
+}
+section#samples .header-line .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+    z-index: -1;
+}
+section#samples .left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background-color: #252525;
+    z-index: 2;
+}
+section#samples .left:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    border-left: 0 transparent solid;
+    border-right: 40vh transparent solid;
+    border-bottom: 100vh #252525 solid;
+    z-index: 2;
+}
+section#samples .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: #D4F6FB;
+    z-index: 1;
+}
+section#samples .bottom:after {
+    content: '';
+    position: absolute;
+    top: -80%;
+    right: 0;
+    border-right: 0 transparent solid;
+    border-left: 120vh transparent solid;
+    border-bottom: 25vh #D4F6FB solid;
+    z-index: 1;
 }
